@@ -18,7 +18,7 @@ Pod::Spec.new do |spec|
   spec.swift_version = "5.0"
 
   spec.name         = "xbTextView"
-  spec.version      = "0.0.2"
+  spec.version      = "0.0.3"
   spec.summary      = "xbTextView."
 
   # This description is used to generate tags and improve search results.
@@ -135,6 +135,6 @@ Pod::Spec.new do |spec|
   # spec.requires_arc = true
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  # spec.dependency "JSONKit", "~> 1.4"
+  # spec.dependency "SnapKit"
 
 end
