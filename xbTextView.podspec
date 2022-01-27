@@ -18,7 +18,7 @@ Pod::Spec.new do |spec|
   spec.swift_version = "5.0"
 
   spec.name         = "xbTextView"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.2"
   spec.summary      = "xbTextView."
 
   # This description is used to generate tags and improve search results.
@@ -27,7 +27,6 @@ Pod::Spec.new do |spec|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   spec.description  = <<-DESC
-
 一个带placeholder的textView，很好用！
                    DESC
 
@@ -94,7 +93,7 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "xbTextView", "xbTextView/**/*.{swift}"
+  spec.source_files  = "xbTextView", "xbTextView/*.{swift}"
   spec.exclude_files = "xbTextView/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
