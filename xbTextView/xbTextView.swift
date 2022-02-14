@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol xbTextViewDelegate: UITextViewDelegate {
+public protocol xbTextViewDelegate: UITextViewDelegate {
     
     func xb_textViewDidChanged(textView: xbTextView, text: String?)
     
@@ -17,7 +17,7 @@ protocol xbTextViewDelegate: UITextViewDelegate {
     
 }
 
-class xbTextView: UITextView {
+public class xbTextView: UITextView {
 
     /** 占位文字*/
     var placeholder: String? = "请输入..."
@@ -70,7 +70,7 @@ class xbTextView: UITextView {
         NotificationCenter.default.removeObserver(self)
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         //fatalError("init(coder:) has not been implemented")
         super.init(coder: aDecoder)
         commonInit()
@@ -107,7 +107,7 @@ class xbTextView: UITextView {
         }
     }
     
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         superview?.layoutSubviews()
         
         let size = sizeThatFits(CGSize(width: bounds.size.width, height: CGFloat.greatestFiniteMagnitude))
@@ -139,7 +139,7 @@ class xbTextView: UITextView {
     }
    
     
-    override func draw(_ rect: CGRect) {
+    open override func draw(_ rect: CGRect) {
         // 如果有文字,就直接返回,不需要画占位文字
         if self.hasText {
             return
@@ -171,7 +171,7 @@ class xbTextView: UITextView {
         
     }
 
-    @objc func textDidChange(notification: Notification) {
+    @objc fileprivate func textDidChange(notification: Notification) {
         
         if let sender = notification.object as? xbTextView, sender == self {
             if trimWhiteSpaceWhenEndEditing {
@@ -198,7 +198,7 @@ class xbTextView: UITextView {
     }
     
     // Trim white space and new line characters when end editing.
-    @objc func textDidEndEditing(notification: Notification) {
+    @objc fileprivate func textDidEndEditing(notification: Notification) {
         if let sender = notification.object as? xbTextView, sender == self {
 //            if trimWhiteSpaceWhenEndEditing {
 //                text = text?.trimmingCharacters(in: .whitespacesAndNewlines)
