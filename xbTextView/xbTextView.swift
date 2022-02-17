@@ -20,48 +20,48 @@ public protocol xbTextViewDelegate: UITextViewDelegate {
 public class xbTextView: UITextView {
 
     /** 占位文字*/
-    var placeholder: String? = "请输入..."
+    public var placeholder: String? = "请输入..."
     /** 占位文字颜色*/
-    var placeholderColor: UIColor? = UIColor.lightGray
+    public var placeholderColor: UIColor? = UIColor.lightGray
     /** 属性字符串占位符*/
-    var attributedPlaceholder: NSAttributedString?
+    public var attributedPlaceholder: NSAttributedString?
     
-    weak var xb_Delegate: xbTextViewDelegate?
+    public weak var xb_Delegate: xbTextViewDelegate?
     
     // Calculate and adjust textview's height
     private var oldHeight: CGFloat = 0.0
     
     /** 是否去除空字符串和换行符 默认false*/
-    var trimWhiteSpaceWhenEndEditing: Bool = false
+    public var trimWhiteSpaceWhenEndEditing: Bool = false
     
     /** 是否自适应高度*/
-    var isAutoHeight: Bool = false
+    public var isAutoHeight: Bool = false
     
     /** 最大字符*/
-    var maxLength: Int = 0
+    public var maxLength: Int = 0
     
     /** 最大高度*/
-    var maxHeight: CGFloat = 0.0 {
+    public var maxHeight: CGFloat = 0.0 {
         didSet {
             forceLayoutSubviews()
         }
     }
     
     /** 最小高度*/
-    var minHeight: CGFloat = 0.0 {
+    public var minHeight: CGFloat = 0.0 {
         didSet {
             forceLayoutSubviews()
         }
     }
     
     
-    var padding: UIEdgeInsets = UIKit.UIEdgeInsets.zero {
+    public var padding: UIEdgeInsets = UIKit.UIEdgeInsets.zero {
         didSet{
             self.textContainerInset = padding
         }
     }
  
-    override init(frame: CGRect, textContainer: NSTextContainer?) {
+    public override init(frame: CGRect, textContainer: NSTextContainer?) {
         super.init(frame: frame, textContainer: textContainer)
         commonInit()
     }
